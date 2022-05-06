@@ -1,2 +1,4 @@
 inout/e48_t192/* filter=lfs diff=lfs merge=lfs -text
 inout/e48_t192/*.txt filter= diff= merge= -text
+inout/e384_t1536/* filter=lfs diff=lfs merge=lfs -text
+inout/e384_t1536/*.txt filter= diff= merge= -text
