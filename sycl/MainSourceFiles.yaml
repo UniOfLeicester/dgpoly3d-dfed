@@ -1,0 +1,1642 @@
+---
+MainSourceFile:  MainSrcFiles_placehold
+Replacements:
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/affine.cu'
+    Offset:          0
+    Length:          0
+    ReplacementText: "#include <CL/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/affine.cu'
+    Offset:          41
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          0
+    Length:          0
+    ReplacementText: "#include <CL/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          128
+    Length:          0
+    ReplacementText: "\n#include <chrono>\n\n#include <cmath>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          129
+    Length:          30
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          248
+    Length:          11
+    ReplacementText: int
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          317
+    Length:          154
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1170
+    Length:          0
+    ReplacementText: "\n    dpct::device_ext &dev_ct1 = dpct::get_current_device();\n    sycl::queue &q_ct1 = dev_ct1.default_queue();"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1175
+    Length:          11
+    ReplacementText: 'sycl::event'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1199
+    Length:          0
+    ReplacementText: "\n    std::chrono::time_point<std::chrono::steady_clock> start_ct1;\n    std::chrono::time_point<std::chrono::steady_clock> stop_ct1;"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1200
+    Length:          29
+    ReplacementText: "    /*\n    DPCT1026:2: The call to cudaEventCreate was removed because this call is redundant in DPC++.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1229
+    Length:          28
+    ReplacementText: "    /*\n    DPCT1026:3: The call to cudaEventCreate was removed because this call is redundant in DPC++.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1310
+    Length:          72
+    ReplacementText: 'd_nodes = (Real (*)[3])sycl::malloc_device(nodes.size() * sizeof(decltype(nodes)::value_type), q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1388
+    Length:          10
+    ReplacementText: q_ct1.memcpy
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1472
+    Length:          24
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1497
+    Length:          0
+    ReplacementText: '.wait()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1526
+    Length:          66
+    ReplacementText: 'd_mbb = (Real (*)[6])sycl::malloc_device(mbb.size() * sizeof(decltype(mbb)::value_type), q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1598
+    Length:          10
+    ReplacementText: q_ct1.memcpy
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1674
+    Length:          24
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1699
+    Length:          0
+    ReplacementText: '.wait()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1736
+    Length:          93
+    ReplacementText: 'd_tetrahedrons = (int (*)[4])sycl::malloc_device(tetrahedrons.size() * sizeof(decltype(tetrahedrons)::value_type), q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1835
+    Length:          10
+    ReplacementText: q_ct1.memcpy
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1947
+    Length:          24
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          1972
+    Length:          0
+    ReplacementText: '.wait()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2009
+    Length:          108
+    ReplacementText: 'd_tetrahedrons2elem = (int *)sycl::malloc_device(tetrahedrons2elem.size() * sizeof(decltype(tetrahedrons2elem)::value_type), q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2123
+    Length:          10
+    ReplacementText: q_ct1.memcpy
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2255
+    Length:          24
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2280
+    Length:          0
+    ReplacementText: '.wait()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2317
+    Length:          108
+    ReplacementText: 'd_NbasisCummulative = (int *)sycl::malloc_device(NbasisCummulative.size() * sizeof(decltype(NbasisCummulative)::value_type), q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2431
+    Length:          10
+    ReplacementText: q_ct1.memcpy
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2563
+    Length:          24
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2588
+    Length:          0
+    ReplacementText: '.wait()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2613
+    Length:          69
+    ReplacementText: 'd_Aval = (Real *)sycl::malloc_device(Aval.size() * sizeof(decltype(Aval)::value_type), q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2688
+    Length:          10
+    ReplacementText: q_ct1.memcpy
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2768
+    Length:          24
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2793
+    Length:          0
+    ReplacementText: '.wait()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2821
+    Length:          81
+    ReplacementText: 'd_Aindices = (int *)sycl::malloc_device(Aindices.size() * sizeof(decltype(Aindices)::value_type), q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          2908
+    Length:          10
+    ReplacementText: q_ct1.memcpy
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3004
+    Length:          24
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3029
+    Length:          0
+    ReplacementText: '.wait()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3056
+    Length:          78
+    ReplacementText: 'd_Aindptr = (int *)sycl::malloc_device(Aindptr.size() * sizeof(decltype(Aindptr)::value_type), q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3140
+    Length:          10
+    ReplacementText: q_ct1.memcpy
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3232
+    Length:          24
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3257
+    Length:          0
+    ReplacementText: '.wait()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3534
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1012:4: Detected kernel execution time measurement pattern and generated an initial code for time measurements in SYCL. You can change the way time is measured depending on your goals.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3538
+    Length:          22
+    ReplacementText: 'start_ct1 = std::chrono::steady_clock::now()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3562
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:6: The workgroup size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the workgroup size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3566
+    Length:          250
+    ReplacementText: "stop = q_ct1.submit(\n      [&](sycl::handler &cgh) {\n        sycl::stream stream_ct1(64 * 1024, 80, cgh);\n\n        extern dpct::constant_memory<Real, 2> legendre;\n        extern dpct::constant_memory<Real, 2> nwElem;\n        extern dpct::constant_memory<int, 2> combinations;\n\n        legendre.init();\n        nwElem.init();\n        combinations.init();\n\n        auto legendre_acc_ct1 = legendre.get_access(cgh);\n        auto nwElem_acc_ct1 = nwElem.get_access(cgh);\n        auto combinations_acc_ct1 = combinations.get_access(cgh);\n\n        cgh.parallel_for(\n          sycl::nd_range<3>(sycl::range<3>(1, 1, gridSize) * sycl::range<3>(1, 1, blockSize), sycl::range<3>(1, 1, blockSize)), \n          [=](sycl::nd_item<3> item_ct1) {\n            assembleElems(NT, Nbasis, Ngauss3, d_nodes, d_mbb, d_tetrahedrons, d_tetrahedrons2elem, d_NbasisCummulative, d_Aval, d_Aindices, d_Aindptr, item_ct1, stream_ct1, legendre_acc_ct1, nwElem_acc_ct1, combinations_acc_ct1);\n          });\n      });"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3816
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3902
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1012:5: Detected kernel execution time measurement pattern and generated an initial code for time measurements in SYCL. You can change the way time is measured depending on your goals.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3906
+    Length:          21
+    ReplacementText: "stop.wait();\n    stop_ct1 = std::chrono::steady_clock::now()"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3929
+    Length:          32
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          3965
+    Length:          48
+    ReplacementText: 'milliseconds = std::chrono::duration<float, std::milli>(stop_ct1 - start_ct1).count()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          4175
+    Length:          10
+    ReplacementText: q_ct1.memcpy
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          4261
+    Length:          24
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          4286
+    Length:          0
+    ReplacementText: '.wait()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          4319
+    Length:          17
+    ReplacementText: 'sycl::free(d_nodes, q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          4342
+    Length:          15
+    ReplacementText: 'sycl::free(d_mbb, q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          4363
+    Length:          24
+    ReplacementText: 'sycl::free(d_tetrahedrons, q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          4393
+    Length:          29
+    ReplacementText: 'sycl::free(d_tetrahedrons2elem, q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          4428
+    Length:          29
+    ReplacementText: 'sycl::free(d_NbasisCummulative, q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          4463
+    Length:          16
+    ReplacementText: 'sycl::free(d_Aval, q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          4485
+    Length:          20
+    ReplacementText: 'sycl::free(d_Aindices, q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          4511
+    Length:          19
+    ReplacementText: 'sycl::free(d_Aindptr, q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          4533
+    Length:          29
+    ReplacementText: "    /*\n    DPCT1026:7: The call to cudaEventDestroy was removed because this call is redundant in DPC++.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Offset:          4562
+    Length:          28
+    ReplacementText: "    /*\n    DPCT1026:8: The call to cudaEventDestroy was removed because this call is redundant in DPC++.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          0
+    Length:          0
+    ReplacementText: "#include <CL/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          78
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          259
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          440
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          621
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          796
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          949
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          1172
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          1496
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          1580
+    Length:          17
+    ReplacementText: 'sycl::sqrt((float)(dot(p1, p1)))'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          1621
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          1879
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          2300
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          2469
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          2601
+    Length:          37
+    ReplacementText: 'sycl::fabs((float)(dot(p4-p1, cross(p2-p1, p3-p1))))'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          2666
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          3141
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          3236
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          3331
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          3400
+    Length:          13
+    ReplacementText: 'sycl::sqrt(1.0/h.x)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          3430
+    Length:          13
+    ReplacementText: 'sycl::sqrt(1.0/h.y)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          3460
+    Length:          13
+    ReplacementText: 'sycl::sqrt(1.0/h.z)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          3498
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          3567
+    Length:          23
+    ReplacementText: 'sycl::sqrt(1.0/(h.x*h.x*h.x))'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          3607
+    Length:          23
+    ReplacementText: 'sycl::sqrt(1.0/(h.y*h.y*h.y))'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          3647
+    Length:          23
+    ReplacementText: 'sycl::sqrt(1.0/(h.z*h.z*h.z))'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          3695
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          3890
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          4098
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          4242
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Offset:          4514
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          0
+    Length:          0
+    ReplacementText: "#include <CL/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          151
+    Length:          57
+    ReplacementText: 'dpct::constant_memory<Real, 2> legendre(LEGENDRE_COLS, LEGENDRE_COLS);'
+    ConstantFlag:    DeviceConstant
+    ConstantOffset:  151
+    InitStr:         ''
+    NewHostVarName:  legendre_host_ct1
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          209
+    Length:          43
+    ReplacementText: 'dpct::constant_memory<Real, 2> nwElem(nwElem_shape0, 4);'
+    ConstantFlag:    DeviceConstant
+    ConstantOffset:  209
+    InitStr:         ''
+    NewHostVarName:  nwElem_host_ct1
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          253
+    Length:          54
+    ReplacementText: 'dpct::constant_memory<int, 2> combinations(combinations_shape0, 3);'
+    ConstantFlag:    DeviceConstant
+    ConstantOffset:  253
+    InitStr:         ''
+    NewHostVarName:  combinations_host_ct1
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          435
+    Length:          0
+    ReplacementText: "\n    dpct::device_ext &dev_ct1 = dpct::get_current_device();\n    sycl::queue &q_ct1 = dev_ct1.default_queue();"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          440
+    Length:          18
+    ReplacementText: q_ct1.memcpy
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          459
+    Length:          8
+    ReplacementText: 'legendre.get_ptr()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          558
+    Length:          0
+    ReplacementText: '.wait()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          564
+    Length:          18
+    ReplacementText: q_ct1.memcpy
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          583
+    Length:          6
+    ReplacementText: 'nwElem.get_ptr()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          662
+    Length:          0
+    ReplacementText: '.wait()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          668
+    Length:          18
+    ReplacementText: q_ct1.memcpy
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          687
+    Length:          12
+    ReplacementText: 'combinations.get_ptr()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          802
+    Length:          0
+    ReplacementText: '.wait()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          818
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          1440
+    Length:          0
+    ReplacementText: ",\n                                         sycl::nd_item<3> item_ct1,\n                                         const sycl::stream &stream_ct1,\n                                         dpct::accessor<Real, dpct::constant, 2> legendre,\n                                         dpct::accessor<Real, dpct::constant, 2> nwElem,\n                                         dpct::accessor<int, dpct::constant, 2> combinations"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          1458
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          1469
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          1482
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          5129
+    Length:          49
+    ReplacementText: 'stream_ct1 << "Element integrals. Negative position.\n"'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          5218
+    Length:          0
+    ReplacementText: "            /*\n            DPCT1039:0: The generated code assumes that \"&Aval[pos]\" points to the global memory address space. If it points to a local memory address space, replace \"dpct::atomic_fetch_add\" with \"dpct::atomic_fetch_add<Real, sycl::access::address_space::local_space>\".\n            */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Offset:          5230
+    Length:          9
+    ReplacementText: 'dpct::atomic_fetch_add'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/params.cu'
+    Offset:          0
+    Length:          0
+    ReplacementText: "#include <CL/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/params.cu'
+    Offset:          59
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/params.cu'
+    Offset:          386
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/dc-kapp1/Dfed/cpp/params.cu'
+    Offset:          514
+    Length:          11
+    ReplacementText: 'SYCL_EXTERNAL '
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  '/home/dc-kapp1/Dfed/cpp/affine.cu'
+    Digest:          68259a403b697eb634d5c693e2f63ca6
+  - MainSourceFile:  '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+    Digest:          c5bf8549a66a07705dc87e0d9f569a9b
+  - MainSourceFile:  '/home/dc-kapp1/Dfed/cpp/funcs.cu'
+    Digest:          95b6340be3069e2e81cc5d3ba582fbdb
+  - MainSourceFile:  '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+    Digest:          ee5bef06495951bce07da629c4c0121c
+  - MainSourceFile:  '/home/dc-kapp1/Dfed/cpp/params.cu'
+    Digest:          77da4d73946e459766695181dcc39f0a
+DpctVersion:     2022.0.0
+MainHelperFileName: dpct
+USMLevel:        ''
+FeatureMap:
+  atomic.hpp:
+    atomic_fetch_add:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     atomic_fetch_add
+      SubFeatureMap:   {}
+  device.hpp:
+    dev_mgr:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     dev_mgr
+      SubFeatureMap:
+        dev_mgr_1:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     dev_mgr
+          SubFeatureMap:   {}
+        dev_mgr_2:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     dev_mgr
+          SubFeatureMap:   {}
+        dev_mgr_3:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     dev_mgr
+          SubFeatureMap:   {}
+        dev_mgr_4:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     dev_mgr
+          SubFeatureMap:   {}
+        dev_mgr_check_id:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'dev_mgr::check_id'
+          SubFeatureMap:   {}
+        dev_mgr_current_device:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'dev_mgr::current_device'
+          SubFeatureMap:   {}
+        dev_mgr_current_device_id:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'dev_mgr::current_device_id'
+          SubFeatureMap:   {}
+    device_ext:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     device_ext
+      SubFeatureMap:
+        device_ext_1:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     device_ext
+          SubFeatureMap:   {}
+        device_ext_2:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     device_ext
+          SubFeatureMap:   {}
+        device_ext_default_queue:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'device_ext::default_queue'
+          SubFeatureMap:   {}
+    exception_handler:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     exception_handler
+      SubFeatureMap:   {}
+    get_current_device:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     get_current_device
+      SubFeatureMap:   {}
+    get_default_queue:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     get_default_queue
+      SubFeatureMap:   {}
+    get_tid:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     get_tid
+      SubFeatureMap:   {}
+  dpct.hpp:
+    non_local_include_dependency:
+      IsCalled:        true
+      CallerSrcFiles:
+        - ''
+      FeatureName:     ''
+      SubFeatureMap:   {}
+  memory.hpp:
+    constant_memory_alias:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     constant_memory
+      SubFeatureMap:   {}
+    device_memory:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     device_memory
+      SubFeatureMap:
+        device_memory_1:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     device_memory
+          SubFeatureMap:   {}
+        device_memory_2:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     device_memory
+          SubFeatureMap:   {}
+        device_memory_3:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     device_memory
+          SubFeatureMap:   {}
+        device_memory_4:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     device_memory
+          SubFeatureMap:   {}
+        device_memory_5:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     device_memory
+          SubFeatureMap:   {}
+        device_memory_6:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     device_memory
+          SubFeatureMap:   {}
+        device_memory_accessor_t_alias:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'device_memory::accessor_t'
+          SubFeatureMap:   {}
+        device_memory_accessor_t_alias_1:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'device_memory::accessor_t'
+          SubFeatureMap:   {}
+        device_memory_allocate_device:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'device_memory::allocate_device'
+          SubFeatureMap:   {}
+        device_memory_dpct_accessor_t_alias:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'device_memory::dpct_accessor_t'
+          SubFeatureMap:   {}
+        device_memory_get_access:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'device_memory::get_access'
+          SubFeatureMap:   {}
+        device_memory_get_access_sp:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'device_memory::get_access'
+          SubFeatureMap:   {}
+        device_memory_get_ptr:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'device_memory::get_ptr'
+          SubFeatureMap:   {}
+        device_memory_get_ptr_q:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'device_memory::get_ptr'
+          SubFeatureMap:   {}
+        device_memory_init:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'device_memory::init'
+          SubFeatureMap:   {}
+        device_memory_init_q:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'device_memory::init'
+          SubFeatureMap:   {}
+        device_memory_value_t_alias:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'device_memory::value_t'
+          SubFeatureMap:   {}
+    dpct_accessor:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     accessor
+      SubFeatureMap:   {}
+    dpct_free:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     dpct_free
+      SubFeatureMap:   {}
+    dpct_malloc_detail:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     dpct_malloc
+      SubFeatureMap:   {}
+    dpct_memcpy:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+      FeatureName:     dpct_memcpy
+      SubFeatureMap:   {}
+    dpct_memcpy_2d:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+      FeatureName:     dpct_memcpy
+      SubFeatureMap:   {}
+    dpct_memcpy_2d_3d_pitch_detail:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+      FeatureName:     dpct_memcpy
+      SubFeatureMap:   {}
+    dpct_memcpy_2d_pitch_detail:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+      FeatureName:     dpct_memcpy
+      SubFeatureMap:   {}
+    dpct_memcpy_3d:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+      FeatureName:     dpct_memcpy
+      SubFeatureMap:   {}
+    dpct_memcpy_3d_detail:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+      FeatureName:     dpct_memcpy
+      SubFeatureMap:   {}
+    dpct_memcpy_detail:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     dpct_memcpy
+      SubFeatureMap:   {}
+    get_buffer_T:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     get_buffer
+      SubFeatureMap:   {}
+    get_buffer_byte_t:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     get_buffer
+      SubFeatureMap:   {}
+    mem_mgr:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     mem_mgr
+      SubFeatureMap:
+        mem_mgr_1:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     mem_mgr
+          SubFeatureMap:   {}
+        mem_mgr_2:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     mem_mgr
+          SubFeatureMap:   {}
+        mem_mgr_get_map_iterator:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'mem_mgr::get_map_iterator'
+          SubFeatureMap:   {}
+        mem_mgr_is_device_ptr:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'mem_mgr::is_device_ptr'
+          SubFeatureMap:   {}
+        mem_mgr_mem_alloc:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'mem_mgr::mem_alloc'
+          SubFeatureMap:   {}
+        mem_mgr_mem_free:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'mem_mgr::mem_free'
+          SubFeatureMap:   {}
+        mem_mgr_translate_ptr:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+            - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+          FeatureName:     'mem_mgr::translate_ptr'
+          SubFeatureMap:   {}
+    memcpy_direction:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     memcpy_direction
+      SubFeatureMap:   {}
+    memory_region:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     memory_region
+      SubFeatureMap:   {}
+    memory_traits:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     memory_traits
+      SubFeatureMap:   {}
+    pitched_data:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+      FeatureName:     pitched_data
+      SubFeatureMap:
+        pitched_data_get_data_ptr:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+          FeatureName:     'pitched_data::get_data_ptr'
+          SubFeatureMap:   {}
+        pitched_data_get_pitch:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+          FeatureName:     'pitched_data::get_pitch'
+          SubFeatureMap:   {}
+        pitched_data_get_y:
+          IsCalled:        true
+          CallerSrcFiles:
+            - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+          FeatureName:     'pitched_data::get_y'
+          SubFeatureMap:   {}
+    pitched_data_1:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+      FeatureName:     pitched_data
+      SubFeatureMap:   {}
+    typedef_buffer_t:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     buffer_t
+      SubFeatureMap:   {}
+    typedef_byte_t:
+      IsCalled:        true
+      CallerSrcFiles:
+        - '/home/dc-kapp1/Dfed/cpp/calcs.cu'
+        - '/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu'
+      FeatureName:     byte_t
+      SubFeatureMap:   {}
+CompileTargets:
+  main:
+    - MigratedFileName: './main.cpp'
+      CompileOptions:  '-std=c++17 -O2 -DUSEFLOAT32 -I./includes '
+      Compiler:        'c++'
+    - MigratedFileName: './funcs.dp.cpp'
+      CompileOptions:  '-DUSEFLOAT32 -I./includes '
+      Compiler:        nvcc
+    - MigratedFileName: './calcs.dp.cpp'
+      CompileOptions:  '-DUSEFLOAT32 -I./includes '
+      Compiler:        nvcc
+    - MigratedFileName: './kernel_assembleElems.dp.cpp'
+      CompileOptions:  '-DUSEFLOAT32 -I./includes '
+      Compiler:        nvcc
+    - MigratedFileName: './affine.dp.cpp'
+      CompileOptions:  '-DUSEFLOAT32 -I./includes '
+      Compiler:        nvcc
+    - MigratedFileName: './params.dp.cpp'
+      CompileOptions:  '-DUSEFLOAT32 -I./includes '
+      Compiler:        nvcc
+OptionMap:
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           '/home/dc-kapp1/Dfed/cpp'
+    Specified:       true
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  CustomHelperFileName:
+    Value:           dpct
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitClNamespace:
+    Value:           'false'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionFlag:
+    Value:           '4294967295'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'false'
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...
