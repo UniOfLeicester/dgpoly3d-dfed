@@ -1,0 +1,36 @@
+[
+    {
+        "command": "c++ -c -std=c++17 -O2 -Wall -DUSEFLOAT32 -Iincludes -o main.o main.cpp",
+        "directory": "/home/dc-kapp1/Dfed/cpp",
+        "file": "/home/dc-kapp1/Dfed/cpp/main.cpp"
+    },
+    {
+        "command": "nvcc -c  --cuda-gpu-arch=sm_75 -DUSEFLOAT32 -Iincludes -o affine.o -D__CUDACC__=1 affine.cu",
+        "directory": "/home/dc-kapp1/Dfed/cpp",
+        "file": "/home/dc-kapp1/Dfed/cpp/affine.cu"
+    },
+    {
+        "command": "nvcc -c  --cuda-gpu-arch=sm_75 -DUSEFLOAT32 -Iincludes -o params.o -D__CUDACC__=1 params.cu",
+        "directory": "/home/dc-kapp1/Dfed/cpp",
+        "file": "/home/dc-kapp1/Dfed/cpp/params.cu"
+    },
+    {
+        "command": "nvcc -c  --cuda-gpu-arch=sm_75 -DUSEFLOAT32 -Iincludes -o funcs.o -D__CUDACC__=1 funcs.cu",
+        "directory": "/home/dc-kapp1/Dfed/cpp",
+        "file": "/home/dc-kapp1/Dfed/cpp/funcs.cu"
+    },
+    {
+        "command": "nvcc -c  --cuda-gpu-arch=sm_75 -DUSEFLOAT32 -Iincludes -o calcs.o -D__CUDACC__=1 calcs.cu",
+        "directory": "/home/dc-kapp1/Dfed/cpp",
+        "file": "/home/dc-kapp1/Dfed/cpp/calcs.cu"
+    },
+    {
+        "command": "nvcc -c  --cuda-gpu-arch=sm_75 -DUSEFLOAT32 -Iincludes -o kernel_assembleElems.o -D__CUDACC__=1 kernel_assembleElems.cu",
+        "directory": "/home/dc-kapp1/Dfed/cpp",
+        "file": "/home/dc-kapp1/Dfed/cpp/kernel_assembleElems.cu"
+    },
+    {
+        "command": "nvcc  -o main main.o affine.o params.o funcs.o calcs.o kernel_assembleElems.o --cuda-gpu-arch=sm_75 -D__CUDACC__=1",
+        "directory": "/home/dc-kapp1/Dfed/cpp"
+    }
+]
