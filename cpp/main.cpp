@@ -37,56 +37,61 @@ std::vector<T> readBinaryFile(std::string fileName)
 
 int main(int argc, char *argv[])
 {
+    std::string dirName = argv[1];
+    if (dirName.back() != '/') {
+        dirName += "/";
+    }
+
     int NT;
     std::vector<int> NT_vec;
-    NT_vec = readBinaryFile<int>("../inout/NT");
+    NT_vec = readBinaryFile<int>(dirName + "NT");
     NT = NT_vec[0];
 
     int Nbasis;
     std::vector<int> Nbasis_vec;
-    Nbasis_vec = readBinaryFile<int>("../inout/Nbasis");
+    Nbasis_vec = readBinaryFile<int>(dirName + "Nbasis");
     Nbasis = Nbasis_vec[0];
 
     int Ngauss3;
     std::vector<int> Ngauss3_vec;
-    Ngauss3_vec = readBinaryFile<int>("../inout/Ngauss3");
+    Ngauss3_vec = readBinaryFile<int>(dirName + "Ngauss3");
     Ngauss3 = Ngauss3_vec[0];
 
     std::vector<Real> nodes;
-    nodes = readBinaryFile<Real>("../inout/nodes");
+    nodes = readBinaryFile<Real>(dirName + "nodes");
 
     std::vector<Real> mbb;
-    mbb = readBinaryFile<Real>("../inout/mbb");
+    mbb = readBinaryFile<Real>(dirName + "mbb");
 
     std::vector<int> tetrahedrons;
-    tetrahedrons = readBinaryFile<int>("../inout/tetrahedrons");
+    tetrahedrons = readBinaryFile<int>(dirName + "tetrahedrons");
 
     std::vector<int> tetrahedrons2elem;
-    tetrahedrons2elem = readBinaryFile<int>("../inout/tetrahedrons2elem");
+    tetrahedrons2elem = readBinaryFile<int>(dirName + "tetrahedrons2elem");
 
     std::vector<int> NbasisCummulative;
-    NbasisCummulative = readBinaryFile<int>("../inout/NbasisCummulative");
+    NbasisCummulative = readBinaryFile<int>(dirName + "NbasisCummulative");
 
     std::vector<Real> Aval;
-    Aval = readBinaryFile<Real>("../inout/Adata");
+    Aval = readBinaryFile<Real>(dirName + "Adata");
 
     std::vector<Real> Aval_elems_ref;
-    Aval_elems_ref = readBinaryFile<Real>("../inout/Adata_elems");
+    Aval_elems_ref = readBinaryFile<Real>(dirName + "Adata_elems");
 
     std::vector<int> Aindices;
-    Aindices = readBinaryFile<int>("../inout/Aindices");
+    Aindices = readBinaryFile<int>(dirName + "Aindices");
 
     std::vector<int> Aindptr;
-    Aindptr = readBinaryFile<int>("../inout/Aindptr");
+    Aindptr = readBinaryFile<int>(dirName + "Aindptr");
 
     std::vector<Real> legendreCoefs;
-    legendreCoefs = readBinaryFile<Real>("../inout/legendreCoefs");
+    legendreCoefs = readBinaryFile<Real>(dirName + "legendreCoefs");
 
     std::vector<Real> nw_elem;
-    nw_elem = readBinaryFile<Real>("../inout/nw_elem");
+    nw_elem = readBinaryFile<Real>(dirName + "nw_elem");
 
     std::vector<int> basisCombinations;
-    basisCombinations = readBinaryFile<int>("../inout/basisCombinations");
+    basisCombinations = readBinaryFile<int>(dirName + "basisCombinations");
 
     std::vector<Real> Aval_elems;
 
