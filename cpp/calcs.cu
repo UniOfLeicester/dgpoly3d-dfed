@@ -33,6 +33,11 @@ std::vector<Real> calcs(int NT,
                         std::vector<Real> nw_elem,
                         std::vector<int> basisCombinations)
 {
+    cudaEvent_t start, stop;
+    cudaEventCreate(&start);
+    cudaEventCreate(&stop);
+    float milliseconds;
+
     Real (*d_nodes)[3];
     cudaMalloc(&d_nodes, nodes.size() * sizeof(decltype(nodes)::value_type));
     cudaMemcpy(d_nodes, nodes.data(), nodes.size() * sizeof(decltype(nodes)::value_type), cudaMemcpyHostToDevice);
@@ -74,12 +79,19 @@ std::vector<Real> calcs(int NT,
     blockSize = 128;
     gridSize = ceil(NT / (float) blockSize);
     // printf("%d - %d\n", gridSize, blockSize);
+
+    cudaEventRecord(start);
     assembleElems<<<gridSize, blockSize>>>(NT, Nbasis, Ngauss3,
                                            d_nodes, d_mbb, d_tetrahedrons, d_tetrahedrons2elem,
                                            d_NbasisCummulative, d_Aval, d_Aindices, d_Aindptr);
-
     // gpuErrchk(cudaPeekAtLastError());
     // gpuErrchk(cudaDeviceSynchronize());
+    cudaEventRecord(stop);
+    cudaEventSynchronize(stop);
+    cudaEventElapsedTime(&milliseconds, start, stop);
+    printf("Time for kernel assembleElems (ms): %.2f\n", milliseconds);
+
+
 
     // Fetch bach the values of A
     std::vector<Real> Aval_elems(Aval.size());
@@ -94,6 +106,9 @@ std::vector<Real> calcs(int NT,
     cudaFree(d_Aval);
     cudaFree(d_Aindices);
     cudaFree(d_Aindptr);
+
+    cudaEventDestroy(start);
+    cudaEventDestroy(stop);
 
     return Aval_elems;
 
