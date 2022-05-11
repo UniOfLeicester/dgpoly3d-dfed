@@ -35,6 +35,23 @@ std::vector<T> readBinaryFile(std::string fileName)
     return ret;
 }
 
+template<typename T>
+bool isClose(T x, T y, T rel_tol=0.01, T abs_tol=0.00001)
+{
+    // Same as Python's math.isclose(a, b, rel_tol, abs_tol)
+    // return abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
+    bool res;
+
+    if (std::abs(x - y) <= std::max(rel_tol * std::max(std::abs(x), std::abs(y)), abs_tol)) {
+        res = true;
+    }
+    else {
+        res = false;
+    }
+
+    return res;
+}
+
 int main(int argc, char *argv[])
 {
     std::string dirName = argv[1];
@@ -106,11 +123,13 @@ int main(int argc, char *argv[])
 
     // Compare with the reference values
     bool valuesCorrect = true;
+    int NwrongValues = 0;
     for (long unsigned int i = 0; i < Aval_elems_ref.size(); i++) {
-        if (fabs(Aval_elems_ref[i] - Aval_elems[i]) > 0.0001) {
-            std::cout << "Wrong value: " << Aval_elems_ref[i] << " =/= " << Aval_elems[i] << std::endl;
+        if (!isClose<Real>(Aval_elems_ref[i], Aval_elems[i])) {
+            // std::cout << "Wrong value: " << Aval_elems_ref[i] << " =/= " << Aval_elems[i] << std::endl;
             valuesCorrect = false;
-            break;
+            NwrongValues += 1;
+            // break;
         }
         // else {
         //     std::cout << "Correct value: " << Aval_elems_ref[i] << " = " << Aval_elems[i] << std::endl;
@@ -119,6 +138,8 @@ int main(int argc, char *argv[])
 
     if (valuesCorrect)
         std::cout << "All values are correct" << std::endl;
+    else
+        std::cout << (100.0 * NwrongValues / Aval_elems_ref.size()) << "% of values are wrong" << std::endl;
 
 
     return 0;
