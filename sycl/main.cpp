@@ -6,6 +6,7 @@
 #include <vector>
 #include <string>
 #include <cmath>
+#include <algorithm>
 
 
 template<typename T>
@@ -115,6 +116,16 @@ int main(int argc, char *argv[])
     // for(const auto& value: nw_elem) {
     //     std::cout << value << std::endl;
     // }
+
+    int Nelements = *std::max_element(tetrahedrons2elem.begin(), tetrahedrons2elem.end()) + 1;
+    std::cout << "p: 2 (hardcoded)" << std::endl; // hardcoded 2nd order polynomial degree
+    std::cout << "Number of elements (polyhedrons): " << Nelements << std::endl;
+    std::cout << "Number of simplices (tetrahedrons): " << NT << std::endl;
+    std::cout << "N (degrees of freedom): " << Aindptr.size() - 1 << std::endl;
+    std::cout << "nnz (total): " << Aval.size() << std::endl;
+    std::cout << "nnz that elements kernel will populate: " << Nelements * Nbasis << std::endl;
+    std::cout << "% of nnz that elements kernel will populate: " << 100.0 * (Nelements * Nbasis) / Aval.size() << std::endl;
+    std::cout << std::endl;
 
     Aval_elems = calcs(NT, Nbasis, Ngauss3, nodes, mbb, tetrahedrons, tetrahedrons2elem,
                        NbasisCummulative, Aval, Aindices, Aindptr,
