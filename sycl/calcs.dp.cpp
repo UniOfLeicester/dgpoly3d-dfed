@@ -36,6 +36,17 @@ std::vector<Real> calcs(int NT,
     sycl::event start, stop;
     std::chrono::time_point<std::chrono::steady_clock> start_ct1;
     std::chrono::time_point<std::chrono::steady_clock> stop_ct1;
+
+    std::cout << "Running on "
+        << q_ct1.get_device().get_info<sycl::info::device::name>()
+        << "\n";
+
+    // sycl::default_selector device_selector;
+    // sycl::queue queue(device_selector);
+    // std::cout << "Running on "
+    //     << queue.get_device().get_info<sycl::info::device::name>()
+    //     << "\n";
+
     /*
     DPCT1026:2: The call to cudaEventCreate was removed because this call is
     redundant in DPC++.
