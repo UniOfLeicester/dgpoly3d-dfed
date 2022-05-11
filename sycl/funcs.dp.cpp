@@ -170,7 +170,7 @@ SYCL_EXTERNAL Vec3 calcCoefh1(Vec3 h)
     return result;
 }
 
-SYCL_EXTERNAL Real eval1dLegendre0(Real legendre[][LEGENDRE_COLS], int n,
+SYCL_EXTERNAL Real eval1dLegendre0(dpct::accessor<Real, dpct::constant, 2> legendre, int n,
                                    Real x)
 {
     Real L = legendre[n][0];
@@ -180,7 +180,7 @@ SYCL_EXTERNAL Real eval1dLegendre0(Real legendre[][LEGENDRE_COLS], int n,
     return L;
 }
 
-SYCL_EXTERNAL Real eval1dLegendre1(Real legendre[][LEGENDRE_COLS], int n,
+SYCL_EXTERNAL Real eval1dLegendre1(dpct::accessor<Real, dpct::constant, 2> legendre, int n,
                                    Real x)
 {
     Real L = legendre[n][0] * n;
