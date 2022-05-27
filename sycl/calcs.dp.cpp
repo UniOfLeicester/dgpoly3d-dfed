@@ -31,15 +31,25 @@ std::vector<Real> calcs(int NT,
                         std::vector<Real> nw_elem,
                         std::vector<int> basisCombinations)
 {
-    dpct::device_ext &dev_ct1 = dpct::get_current_device();
-    sycl::queue &q_ct1 = dev_ct1.default_queue();
+    // dpct::device_ext &dev_ct1 = dpct::get_current_device();
+    // sycl::queue &q_ct1 = dev_ct1.default_queue();
+
+    // auto platformlist = sycl::platform::get_platforms();
+    // std::cout << "List of detected devices:" << "\n";
+    // for (auto p : platformlist) {
+    //     auto devicelist = p.get_devices(sycl::info::device_type::all);
+    //     for(auto d : devicelist) {
+    //         std::string device_vendor = d.get_info<sycl::info::device::vendor>();
+    //         std::cout<<d.get_info<sycl::info::device::name>()<<"\n";
+    //     }
+    // }
+
+    sycl::queue q_ct1{ sycl::default_selector{} };
+    std::cout << "Running on: " << q_ct1.get_device().get_info<sycl::info::device::name>() << "\n";
+
     sycl::event start, stop;
     std::chrono::time_point<std::chrono::steady_clock> start_ct1;
     std::chrono::time_point<std::chrono::steady_clock> stop_ct1;
-
-    std::cout << "Running on "
-        << q_ct1.get_device().get_info<sycl::info::device::name>()
-        << "\n";
 
     // sycl::default_selector device_selector;
     // sycl::queue queue(device_selector);
