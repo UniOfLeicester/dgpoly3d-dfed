@@ -5,6 +5,7 @@
 #include "affine.h"
 #include "params.h"
 #include "funcs.h"
+#include "intel_atomic.hpp"
 #include <stdio.h>
 #include <vector>
 
@@ -144,7 +145,7 @@ assembleElems(int NT, int Nbasis, int Ngauss, Real nodes[][3],
             "dpct::atomic_fetch_add<Real,
             sycl::access::address_space::local_space>".
             */
-            dpct::atomic_fetch_add(&Aval[pos], sumA);
+            intel_atomic::atomic_fetch_add(&Aval[pos], sumA);
         }
     }
 }
