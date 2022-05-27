@@ -140,7 +140,12 @@ std::vector<Real> calcs(int NT,
         .wait();
 
     // Set the constant memory
-    elems_set_constant_mem(legendreCoefs, nw_elem, basisCombinations);
+    // elems_set_constant_mem(legendreCoefs, nw_elem, basisCombinations);
+
+    // Buffers for the 3 arrays in constant memory
+    sycl::buffer<Real, 2> legendreCoefs_buf(legendreCoefs.data(), sycl::range<2>{LEGENDRE_COLS, LEGENDRE_COLS});
+    sycl::buffer<Real, 2> nw_elem_buf(nw_elem.data(), sycl::range<2>{nwElem_shape0, 4});
+    sycl::buffer<int, 2> basisCombinations_buf(basisCombinations.data(), sycl::range<2>{combinations_shape0, 3});
 
     // Launch the kernel
     int gridSize, blockSize;
@@ -162,17 +167,21 @@ std::vector<Real> calcs(int NT,
     stop = q_ct1.submit([&](sycl::handler &cgh) {
         sycl::stream stream_ct1(64 * 1024, 80, cgh);
 
-        extern dpct::constant_memory<Real, 2> legendre;
-        extern dpct::constant_memory<Real, 2> nwElem;
-        extern dpct::constant_memory<int, 2> combinations;
+        // extern dpct::constant_memory<Real, 2> legendre;
+        // extern dpct::constant_memory<Real, 2> nwElem;
+        // extern dpct::constant_memory<int, 2> combinations;
 
-        legendre.init();
-        nwElem.init();
-        combinations.init();
+        // legendre.init();
+        // nwElem.init();
+        // combinations.init();
 
-        auto legendre_acc_ct1 = legendre.get_access(cgh);
-        auto nwElem_acc_ct1 = nwElem.get_access(cgh);
-        auto combinations_acc_ct1 = combinations.get_access(cgh);
+        // auto legendre_acc_ct1 = legendre.get_access(cgh);
+        // auto nwElem_acc_ct1 = nwElem.get_access(cgh);
+        // auto combinations_acc_ct1 = combinations.get_access(cgh);
+
+        auto legendre_acc_ct1 = legendreCoefs_buf.get_access<sycl::access::mode::read, sycl::access::target::constant_buffer>(cgh);
+        auto nwElem_acc_ct1 = nw_elem_buf.get_access<sycl::access::mode::read, sycl::access::target::constant_buffer>(cgh);
+        auto combinations_acc_ct1 = basisCombinations_buf.get_access<sycl::access::mode::read, sycl::access::target::constant_buffer>(cgh);
 
         cgh.parallel_for(
             sycl::nd_range<3>(sycl::range<3>(1, 1, gridSize) *

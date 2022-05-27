@@ -22,9 +22,9 @@ SYCL_EXTERNAL Real scaleh(Real *mbb1d);
 SYCL_EXTERNAL Real scalem(Real *mbb1d);
 SYCL_EXTERNAL Vec3 calcCoefh0(Vec3 h);
 SYCL_EXTERNAL Vec3 calcCoefh1(Vec3 h);
-SYCL_EXTERNAL Real eval1dLegendre0(dpct::accessor<Real, dpct::constant, 2> legendre, int n,
+SYCL_EXTERNAL Real eval1dLegendre0(sycl::accessor<Real, 2, sycl::access::mode::read, sycl::access::target::constant_buffer> legendre, int n,
                                    Real x);
-SYCL_EXTERNAL Real eval1dLegendre1(dpct::accessor<Real, dpct::constant, 2> legendre, int n,
+SYCL_EXTERNAL Real eval1dLegendre1(sycl::accessor<Real, 2, sycl::access::mode::read, sycl::access::target::constant_buffer> legendre, int n,
                                    Real x);
 SYCL_EXTERNAL Real eval3dLegendre0(Vec3 h_0, Vec3 L0);
 SYCL_EXTERNAL Vec3 eval3dLegendre1(Vec3 h_0, Vec3 h_1, Vec3 L0, Vec3 L1);

@@ -8,29 +8,29 @@
 #include <stdio.h>
 #include <vector>
 
-dpct::constant_memory<Real, 2> legendre(LEGENDRE_COLS, LEGENDRE_COLS);
-dpct::constant_memory<Real, 2> nwElem(nwElem_shape0, 4);
-dpct::constant_memory<int, 2> combinations(combinations_shape0, 3);
+// dpct::constant_memory<Real, 2> legendre(LEGENDRE_COLS, LEGENDRE_COLS);
+// dpct::constant_memory<Real, 2> nwElem(nwElem_shape0, 4);
+// dpct::constant_memory<int, 2> combinations(combinations_shape0, 3);
 
-void elems_set_constant_mem(std::vector<Real> legendreCoefs, std::vector<Real> nw_elem, std::vector<int> basisCombinations)
-{
-    dpct::device_ext &dev_ct1 = dpct::get_current_device();
-    sycl::queue &q_ct1 = dev_ct1.default_queue();
-    q_ct1
-        .memcpy(legendre.get_ptr(), legendreCoefs.data(),
-                legendreCoefs.size() *
-                    sizeof(decltype(legendreCoefs)::value_type))
-        .wait();
-    q_ct1
-        .memcpy(nwElem.get_ptr(), nw_elem.data(),
-                nw_elem.size() * sizeof(decltype(nw_elem)::value_type))
-        .wait();
-    q_ct1
-        .memcpy(combinations.get_ptr(), basisCombinations.data(),
-                basisCombinations.size() *
-                    sizeof(decltype(basisCombinations)::value_type))
-        .wait();
-}
+// void elems_set_constant_mem(std::vector<Real> legendreCoefs, std::vector<Real> nw_elem, std::vector<int> basisCombinations)
+// {
+//     dpct::device_ext &dev_ct1 = dpct::get_current_device();
+//     sycl::queue &q_ct1 = dev_ct1.default_queue();
+//     q_ct1
+//         .memcpy(legendre.get_ptr(), legendreCoefs.data(),
+//                 legendreCoefs.size() *
+//                     sizeof(decltype(legendreCoefs)::value_type))
+//         .wait();
+//     q_ct1
+//         .memcpy(nwElem.get_ptr(), nw_elem.data(),
+//                 nw_elem.size() * sizeof(decltype(nw_elem)::value_type))
+//         .wait();
+//     q_ct1
+//         .memcpy(combinations.get_ptr(), basisCombinations.data(),
+//                 basisCombinations.size() *
+//                     sizeof(decltype(basisCombinations)::value_type))
+//         .wait();
+// }
 
 extern "C" SYCL_EXTERNAL void
 assembleElems(int NT, int Nbasis, int Ngauss, Real nodes[][3],
@@ -38,9 +38,9 @@ assembleElems(int NT, int Nbasis, int Ngauss, Real nodes[][3],
               int *tetrahedrons2elem, int *NbasisCummulative, Real *Aval,
               int *Aindices, int *Aindptr, sycl::nd_item<3> item_ct1,
               const sycl::stream &stream_ct1,
-              dpct::accessor<Real, dpct::constant, 2> legendre,
-              dpct::accessor<Real, dpct::constant, 2> nwElem,
-              dpct::accessor<int, dpct::constant, 2> combinations)
+              sycl::accessor<Real, 2, sycl::access::mode::read, sycl::access::target::constant_buffer> legendre,
+              sycl::accessor<Real, 2, sycl::access::mode::read, sycl::access::target::constant_buffer> nwElem,
+              sycl::accessor<int, 2, sycl::access::mode::read, sycl::access::target::constant_buffer> combinations)
 {
     int idx = item_ct1.get_group(2) * item_ct1.get_local_range().get(2) +
               item_ct1.get_local_id(2);
