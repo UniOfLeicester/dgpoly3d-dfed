@@ -2,7 +2,6 @@
 #define KERNEL_ASSEMBLEELEMS_H
 
 #include <CL/sycl.hpp>
-#include <dpct/dpct.hpp>
 #include "types.h"
 #include <vector>
 

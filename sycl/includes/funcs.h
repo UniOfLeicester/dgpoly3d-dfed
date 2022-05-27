@@ -2,7 +2,6 @@
 #define FUNCS_H
 
 #include <CL/sycl.hpp>
-#include <dpct/dpct.hpp>
 #include "types.h"
 
 Vec3 operator+(Vec3 p1, Vec3 p2);

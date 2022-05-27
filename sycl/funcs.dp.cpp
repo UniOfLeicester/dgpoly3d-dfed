@@ -1,5 +1,4 @@
 #include <CL/sycl.hpp>
-#include <dpct/dpct.hpp>
 #include "funcs.h"
 #include "types.h"
 #include "params.h"

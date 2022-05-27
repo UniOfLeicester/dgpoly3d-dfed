@@ -1,5 +1,4 @@
 #include <CL/sycl.hpp>
-#include <dpct/dpct.hpp>
 #include "calcs.h"
 #include "types.h"
 #include "kernel_assembleElems.h"
@@ -7,7 +6,6 @@
 #include <stdio.h>
 #include <vector>
 #include <chrono>
-
 #include <cmath>
 
 #define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }

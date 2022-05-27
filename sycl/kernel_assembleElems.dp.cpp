@@ -1,5 +1,4 @@
 #include <CL/sycl.hpp>
-#include <dpct/dpct.hpp>
 #include "kernel_assembleElems.h"
 #include "types.h"
 #include "affine.h"

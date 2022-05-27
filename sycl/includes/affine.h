@@ -2,7 +2,6 @@
 #define AFFINE_H
 
 #include <CL/sycl.hpp>
-#include <dpct/dpct.hpp>
 #include "types.h"
 
 SYCL_EXTERNAL Affine3 genAffine3d(Vec3 node1, Vec3 node2, Vec3 node3,

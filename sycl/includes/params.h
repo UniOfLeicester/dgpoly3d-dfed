@@ -2,7 +2,6 @@
 #define PARAMS_H
 
 #include <CL/sycl.hpp>
-#include <dpct/dpct.hpp>
 #include "types.h"
 
 SYCL_EXTERNAL Matrix3 diffusion(Vec3 node);
