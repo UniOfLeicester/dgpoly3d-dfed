@@ -39,14 +39,14 @@ extern "C" void
 assembleElems(int NT, int Nbasis, int Ngauss, Real nodes[][3],
               Real minBoundBox[][6], int tetrahedrons[][4],
               int *tetrahedrons2elem, int *NbasisCummulative, Real *Aval,
-              int *Aindices, int *Aindptr, sycl::nd_item<3> item_ct1,
+              int *Aindices, int *Aindptr, sycl::nd_item<1> item_ct1,
               const sycl::stream &stream_ct1,
               sycl::accessor<Real, 2, sycl::access::mode::read, sycl::access::target::constant_buffer> legendre,
               sycl::accessor<Real, 2, sycl::access::mode::read, sycl::access::target::constant_buffer> nwElem,
               sycl::accessor<int, 2, sycl::access::mode::read, sycl::access::target::constant_buffer> combinations)
 {
-    int idx = item_ct1.get_group(2) * item_ct1.get_local_range().get(2) +
-              item_ct1.get_local_id(2);
+    int idx = item_ct1.get_group(0) * item_ct1.get_local_range().get(0) +
+              item_ct1.get_local_id(0);
     if (idx >= NT) return;
 
     int elementid = tetrahedrons2elem[idx];

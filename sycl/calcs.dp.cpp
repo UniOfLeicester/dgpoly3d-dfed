@@ -184,10 +184,10 @@ std::vector<Real> calcs(int NT,
         auto combinations_acc_ct1 = basisCombinations_buf.get_access<sycl::access::mode::read, sycl::access::target::constant_buffer>(cgh);
 
         cgh.parallel_for<class kernel_assembleElems>(
-            sycl::nd_range<3>(sycl::range<3>(1, 1, gridSize) *
-                                  sycl::range<3>(1, 1, blockSize),
-                              sycl::range<3>(1, 1, blockSize)),
-            [=](sycl::nd_item<3> item_ct1) {
+            sycl::nd_range<1>(sycl::range<1>(gridSize) *
+                                  sycl::range<1>(blockSize),
+                              sycl::range<1>(blockSize)),
+            [=](sycl::nd_item<1> item_ct1) {
                 assembleElems(NT, Nbasis, Ngauss3, d_nodes, d_mbb,
                               d_tetrahedrons, d_tetrahedrons2elem,
                               d_NbasisCummulative, d_Aval, d_Aindices,
