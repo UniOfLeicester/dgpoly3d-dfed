@@ -32,7 +32,7 @@
 //         .wait();
 // }
 
-extern "C" SYCL_EXTERNAL void
+extern "C" void
 assembleElems(int NT, int Nbasis, int Ngauss, Real nodes[][3],
               Real minBoundBox[][6], int tetrahedrons[][4],
               int *tetrahedrons2elem, int *NbasisCummulative, Real *Aval,

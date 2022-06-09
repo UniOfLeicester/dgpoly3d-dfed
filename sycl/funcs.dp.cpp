@@ -45,7 +45,7 @@ Vec3 operator/(Real s, Vec3 p1)
     return result;
 }
 
-SYCL_EXTERNAL Real dot(Vec3 p1, Vec3 p2)
+Real dot(Vec3 p1, Vec3 p2)
 {
     //p1*p2 (dot product)
     Real result;
@@ -63,7 +63,7 @@ Vec3 cross(Vec3 p1, Vec3 p2)
     return result;
 }
 
-SYCL_EXTERNAL Vec3 operator*(Matrix3 M, Vec3 v)
+Vec3 operator*(Matrix3 M, Vec3 v)
 {
     //M*v (matrix-vector product)
     Vec3 result;
@@ -111,7 +111,7 @@ Real volumetriangle(Vec3 p1, Vec3 p2, Vec3 p3)
     return vol;
 }
 
-SYCL_EXTERNAL Real volumetetr(Vec3 p1, Vec3 p2, Vec3 p3, Vec3 p4)
+Real volumetetr(Vec3 p1, Vec3 p2, Vec3 p3, Vec3 p4)
 {
     // 1/6 * |(p4-p1) * ((p2-p1)x(p3-p1))|
     Real vol;
@@ -119,7 +119,7 @@ SYCL_EXTERNAL Real volumetetr(Vec3 p1, Vec3 p2, Vec3 p3, Vec3 p4)
     return vol;
 }
 
-SYCL_EXTERNAL MinBBox3 genMinBoundingBox(Real minBoundBox[][6], int elementid)
+MinBBox3 genMinBoundingBox(Real minBoundBox[][6], int elementid)
 {
     // For polyhydral meshes (agglomerated tetrahedrons).
     MinBBox3 result;
@@ -137,19 +137,19 @@ SYCL_EXTERNAL MinBBox3 genMinBoundingBox(Real minBoundBox[][6], int elementid)
     return result;
 }
 
-SYCL_EXTERNAL Real scaleh(Real *mbb1d)
+Real scaleh(Real *mbb1d)
 {
     Real h = (mbb1d[1] - mbb1d[0])/2.0;
     return h;
 }
 
-SYCL_EXTERNAL Real scalem(Real *mbb1d)
+Real scalem(Real *mbb1d)
 {
     Real m = (mbb1d[0] + mbb1d[1])/2.0;
     return m;
 }
 
-SYCL_EXTERNAL Vec3 calcCoefh0(Vec3 h)
+Vec3 calcCoefh0(Vec3 h)
 {
     Vec3 result;
     result.x = sycl::sqrt(1.0 / h.x);
@@ -159,7 +159,7 @@ SYCL_EXTERNAL Vec3 calcCoefh0(Vec3 h)
     return result;
 }
 
-SYCL_EXTERNAL Vec3 calcCoefh1(Vec3 h)
+Vec3 calcCoefh1(Vec3 h)
 {
     Vec3 result;
     result.x = sycl::sqrt(1.0 / (h.x * h.x * h.x));
@@ -169,7 +169,7 @@ SYCL_EXTERNAL Vec3 calcCoefh1(Vec3 h)
     return result;
 }
 
-SYCL_EXTERNAL Real eval1dLegendre0(sycl::accessor<Real, 2, sycl::access::mode::read, sycl::access::target::constant_buffer> legendre, int n,
+Real eval1dLegendre0(sycl::accessor<Real, 2, sycl::access::mode::read, sycl::access::target::constant_buffer> legendre, int n,
                                    Real x)
 {
     Real L = legendre[n][0];
@@ -179,7 +179,7 @@ SYCL_EXTERNAL Real eval1dLegendre0(sycl::accessor<Real, 2, sycl::access::mode::r
     return L;
 }
 
-SYCL_EXTERNAL Real eval1dLegendre1(sycl::accessor<Real, 2, sycl::access::mode::read, sycl::access::target::constant_buffer> legendre, int n,
+Real eval1dLegendre1(sycl::accessor<Real, 2, sycl::access::mode::read, sycl::access::target::constant_buffer> legendre, int n,
                                    Real x)
 {
     Real L = legendre[n][0] * n;
@@ -189,7 +189,7 @@ SYCL_EXTERNAL Real eval1dLegendre1(sycl::accessor<Real, 2, sycl::access::mode::r
     return L;
 }
 
-SYCL_EXTERNAL Real eval3dLegendre0(Vec3 h_0, Vec3 L0)
+Real eval3dLegendre0(Vec3 h_0, Vec3 L0)
 {
     Real result;
     result = h_0.x*L0.x * h_0.y*L0.y * h_0.z*L0.z;
@@ -197,7 +197,7 @@ SYCL_EXTERNAL Real eval3dLegendre0(Vec3 h_0, Vec3 L0)
     return result;
 }
 
-SYCL_EXTERNAL Vec3 eval3dLegendre1(Vec3 h_0, Vec3 h_1, Vec3 L0, Vec3 L1)
+Vec3 eval3dLegendre1(Vec3 h_0, Vec3 h_1, Vec3 L0, Vec3 L1)
 {
     Vec3 result;
 
@@ -208,7 +208,7 @@ SYCL_EXTERNAL Vec3 eval3dLegendre1(Vec3 h_0, Vec3 h_1, Vec3 L0, Vec3 L1)
     return result;
 }
 
-SYCL_EXTERNAL int binarySearch(int *arr, int l, int r, int x)
+int binarySearch(int *arr, int l, int r, int x)
 {
     // A iterative binary search function. It returns
     // location of x in given array arr[l..r] if present,

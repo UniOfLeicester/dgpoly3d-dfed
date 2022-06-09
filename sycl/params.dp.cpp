@@ -3,7 +3,7 @@
 #include "types.h"
 #include <math.h>
 
-SYCL_EXTERNAL Matrix3 diffusion(Vec3 node)
+Matrix3 diffusion(Vec3 node)
 {
     Matrix3 diff;
 
@@ -22,7 +22,7 @@ SYCL_EXTERNAL Matrix3 diffusion(Vec3 node)
     return diff;
 }
 
-SYCL_EXTERNAL Vec3 advection(Vec3 node)
+Vec3 advection(Vec3 node)
 {
     Vec3 adv;
 
@@ -33,7 +33,7 @@ SYCL_EXTERNAL Vec3 advection(Vec3 node)
     return adv;
 }
 
-SYCL_EXTERNAL Real reaction(Vec3 node)
+Real reaction(Vec3 node)
 {
     Real react;
 

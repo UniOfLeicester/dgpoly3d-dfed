@@ -2,7 +2,7 @@
 #include "affine.h"
 #include "types.h"
 
-SYCL_EXTERNAL Affine3 genAffine3d(Vec3 node1, Vec3 node2, Vec3 node3,
+Affine3 genAffine3d(Vec3 node1, Vec3 node2, Vec3 node3,
                                   Vec3 node4)
 {
     const int N = 3;
