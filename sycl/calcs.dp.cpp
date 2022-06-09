@@ -183,7 +183,7 @@ std::vector<Real> calcs(int NT,
         auto nwElem_acc_ct1 = nw_elem_buf.get_access<sycl::access::mode::read, sycl::access::target::constant_buffer>(cgh);
         auto combinations_acc_ct1 = basisCombinations_buf.get_access<sycl::access::mode::read, sycl::access::target::constant_buffer>(cgh);
 
-        cgh.parallel_for(
+        cgh.parallel_for<class kernel_assembleElems>(
             sycl::nd_range<3>(sycl::range<3>(1, 1, gridSize) *
                                   sycl::range<3>(1, 1, blockSize),
                               sycl::range<3>(1, 1, blockSize)),
