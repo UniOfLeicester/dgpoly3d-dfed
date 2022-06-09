@@ -4,6 +4,9 @@
 #include <CL/sycl.hpp>
 #include "types.h"
 
+namespace sycl = cl::sycl;
+
+
 Vec3 operator+(Vec3 p1, Vec3 p2);
 Vec3 operator-(Vec3 p1, Vec3 p2);
 Vec3 operator*(Real s, Vec3 p1);

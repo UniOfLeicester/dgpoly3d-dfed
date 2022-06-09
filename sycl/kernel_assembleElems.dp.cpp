@@ -8,6 +8,9 @@
 #include <stdio.h>
 #include <vector>
 
+namespace sycl = cl::sycl;
+
+
 // dpct::constant_memory<Real, 2> legendre(LEGENDRE_COLS, LEGENDRE_COLS);
 // dpct::constant_memory<Real, 2> nwElem(nwElem_shape0, 4);
 // dpct::constant_memory<int, 2> combinations(combinations_shape0, 3);

@@ -5,6 +5,7 @@
 #include "types.h"
 #include <vector>
 
+namespace sycl = cl::sycl;
 
 void elems_set_constant_mem(std::vector<Real>, std::vector<Real>, std::vector<int>);
 extern "C" SYCL_EXTERNAL void

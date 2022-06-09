@@ -4,6 +4,8 @@
 #include "params.h"
 #include <math.h>
 
+namespace sycl = cl::sycl;
+
 
 Vec3 operator+(Vec3 p1, Vec3 p2)
 {
