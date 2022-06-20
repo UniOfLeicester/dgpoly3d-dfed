@@ -1,6 +1,5 @@
-CC=clang++
-CFLAGS=-fsycl -fsycl-targets=nvptx64-nvidia-cuda -std=c++17 -O1 -DUSEFLOAT32
-# CFLAGS=-fsycl -ffp-model=precise -std=c++17 -O1 -DUSEFLOAT32
+CC=dpcpp
+CFLAGS=-std=c++17 -fp-model=precise -O1 -DUSEFLOAT32
 LDFLAGS=
 
 INCLUDES=-Iincludes
