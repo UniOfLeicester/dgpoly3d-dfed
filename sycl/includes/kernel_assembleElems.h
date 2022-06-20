@@ -7,7 +7,8 @@
 
 namespace sycl = cl::sycl;
 
-void elems_set_constant_mem(std::vector<Real>, std::vector<Real>, std::vector<int>);
+
+// void elems_set_constant_mem(std::vector<Real>, std::vector<Real>, std::vector<int>);
 extern "C" SYCL_EXTERNAL void
 assembleElems(int, int, int, Real (*)[3], Real (*)[6], int (*)[4], int *, int *,
               Real *, int *, int *, sycl::nd_item<1> item_ct1,
