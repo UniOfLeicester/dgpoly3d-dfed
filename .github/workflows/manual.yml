@@ -39,10 +39,10 @@ jobs:
       working-directory: ${{github.workspace}}/sycl
       run: |
         source /opt/intel/oneapi/setvars.sh
-        ./main ${{github.workspace}}/inout/e48_t192
+        ./main ${{github.workspace}}/inout/e48_t192 | grep "All values are correct"
   
     - name: Run on 384 elements
       working-directory: ${{github.workspace}}/sycl
       run: |
         source /opt/intel/oneapi/setvars.sh
-        ./main ${{github.workspace}}/inout/e384_t1536
+        ./main ${{github.workspace}}/inout/e384_t1536 | grep "All values are correctt"
