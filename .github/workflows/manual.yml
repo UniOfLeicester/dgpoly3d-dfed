@@ -13,9 +13,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build dpcpp compiled version
-      run: make -f Makefile.dpcpp
-    - name: Run the code with the 48 elements as input
-      run: ./main ../inout/e48_t192
-    - name: Run the code with the 384 elements as input
-      run: ./main ../inout/e384_t1536
+    - name: Build and run the SYCL code with dpcpp
+      run: cd sycl && make -f Makefile.dpcpp && ./main ../inout/e48_t192
