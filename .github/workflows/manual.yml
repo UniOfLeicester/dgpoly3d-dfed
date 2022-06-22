@@ -1,4 +1,4 @@
-name: on_push
+name: DPC++
 
 on:
   push:
@@ -13,5 +13,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the SYCL code with dpcpp and run it
-      run: cd sycl && make -f Makefile.dpcpp && ./main ../inout/e48_t192
+    
+    - name: Checkout LFS objects
+      run: git lfs pull
+    
+    - name: Make
+      working-directory: ${{github.workspace}}/sycl
+      run: make -f Makefile.dpcpp
+    
+    - name: Run on 48 elements
+      working-directory: ${{github.workspace}}/sycl
+      run: ./main ${{github.workspace}}/inout/e48_t192
+  
+    - name: Run on 384 elements
+      working-directory: ${{github.workspace}}/sycl
+      run: ./main ${{github.workspace}}/inout/e384_t1536
