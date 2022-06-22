@@ -5,11 +5,17 @@ on:
     branches: [ "gh-actions" ]
 
 jobs:
-  build:
+  build-dpcpp:
 
     runs-on: ubuntu-latest
+    container:
+      image: tommelt/fusionalp-intel-build-enviroment:latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: whatever
-      run: echo "Success"
+    - name: Build dpcpp compiled version
+      run: make -f Makefile.dpcpp
+    - name: Run the code with the 48 elements as input
+      run: ./main ../inout/e48_t192
+    - name: Run the code with the 384 elements as input
+      run: ./main ../inout/e384_t1536
