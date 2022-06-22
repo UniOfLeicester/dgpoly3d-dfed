@@ -9,9 +9,9 @@ jobs:
 
     runs-on: ubuntu-latest
     container:
-      image: tommelt/fusionalp-intel-build-enviroment:latest
+      image: intel/oneapi-basekit:latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build and run the SYCL code with dpcpp
+    - name: Build the SYCL code with dpcpp and run it
       run: cd sycl && make -f Makefile.dpcpp && ./main ../inout/e48_t192
