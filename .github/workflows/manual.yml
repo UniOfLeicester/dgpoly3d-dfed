@@ -2,7 +2,7 @@ name: DPC++
 
 on:
   push:
-    branches: [ "gh-actions" ]
+    branches: [ "main" ]
 
 jobs:
   build-dpcpp:
@@ -45,4 +45,4 @@ jobs:
       working-directory: ${{github.workspace}}/sycl
       run: |
         source /opt/intel/oneapi/setvars.sh
-        ./main ${{github.workspace}}/inout/e384_t1536 | grep "All values are correctt"
+        ./main ${{github.workspace}}/inout/e384_t1536 | grep "All values are correct"
