@@ -11,17 +11,21 @@ jobs:
     container:
       image: intel/oneapi-basekit:latest
 
-    steps:
-    - uses: actions/checkout@v3
-    
+    steps:   
     - name: Install git-lfs
       run: |
         curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
         apt-get install git-lfs
     
-    - name: Checkout LFS objects
-      working-directory: ${{github.workspace}}
-      run: git lfs pull
+    - uses: actions/checkout@v3
+      with:
+        repository: ${{ github.repository }}
+        ref: 'gh-action-lfs'
+        lfs: true
+    
+    #- name: Checkout LFS objects
+    #  working-directory: ${{github.workspace}}
+    #  run: git lfs pull
     
     - name: Compile
       working-directory: ${{github.workspace}}/sycl
