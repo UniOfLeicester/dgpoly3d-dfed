@@ -17,24 +17,24 @@ jobs:
         curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
         apt-get install git-lfs
     
-    - uses: actions/checkout@v3
+    - name: Checkout github repo (+ download lfs dependencies)
+      uses: actions/checkout@v3
       with:
         repository: ${{ github.repository }}
-        ref: 'gh-action-lfs'
+        ref: 'main'
         lfs: true
     
-    #- name: Checkout LFS objects
-    #  working-directory: ${{github.workspace}}
-    #  run: git lfs pull
-    
+    - name: Checkout LFS objects
+      run: git lfs checkout
+        
     - name: Compile
-      working-directory: ${{github.workspace}}/sycl
+      working-directory: ${{ github.workspace }}/sycl
       run: make -f Makefile.dpcpp
     
     - name: Run on 48 elements
-      working-directory: ${{github.workspace}}/sycl
-      run: ./main ${{github.workspace}}/inout/e48_t192 | grep "All values are correct"
+      working-directory: ${{ github.workspace }}/sycl
+      run: ./main ${{ github.workspace }}/inout/e48_t192 | grep "All values are correct"
   
     - name: Run on 384 elements
-      working-directory: ${{github.workspace}}/sycl
-      run: ./main ${{github.workspace}}/inout/e384_t1536 | grep "All values are correct"
+      working-directory: ${{ github.workspace }}/sycl
+      run: ./main ${{ github.workspace }}/inout/e384_t1536 | grep "All values are correct"
