@@ -2,47 +2,32 @@ name: DPC++
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "gh-action-lfs" ]
 
 jobs:
   build-dpcpp:
 
     runs-on: ubuntu-latest
-    # container:
-    #   image: intel/oneapi-basekit:latest
+    container:
+      image: intel/oneapi-basekit:latest
 
     steps:
     - uses: actions/checkout@v3
     
+    - name: Install git-lfs
+      run: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+    
     - name: Checkout LFS objects
       run: git lfs pull
     
-    - name: Setup OneAPI
-      run: |
-        wget -O- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB \
-        | gpg --dearmor | sudo tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null
-        echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" | sudo tee /etc/apt/sources.list.d/oneAPI.list
-        sudo apt -y update
-    
-    - name: Install OneAPI
-      run: |
-        sudo apt install -y intel-oneapi-common-vars
-        sudo apt install -y intel-oneapi-compiler-dpcpp-cpp
-    
     - name: Compile
       working-directory: ${{github.workspace}}/sycl
-      run: |
-        source /opt/intel/oneapi/setvars.sh
-        make -f Makefile.dpcpp
+      run: make -f Makefile.dpcpp
     
     - name: Run on 48 elements
       working-directory: ${{github.workspace}}/sycl
-      run: |
-        source /opt/intel/oneapi/setvars.sh
-        ./main ${{github.workspace}}/inout/e48_t192 | grep "All values are correct"
+      run: ./main ${{github.workspace}}/inout/e48_t192 | grep "All values are correct"
   
     - name: Run on 384 elements
       working-directory: ${{github.workspace}}/sycl
-      run: |
-        source /opt/intel/oneapi/setvars.sh
-        ./main ${{github.workspace}}/inout/e384_t1536 | grep "All values are correct"
+      run: ./main ${{github.workspace}}/inout/e384_t1536 | grep "All values are correct"
