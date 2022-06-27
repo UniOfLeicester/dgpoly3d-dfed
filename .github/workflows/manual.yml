@@ -20,6 +20,7 @@ jobs:
         apt-get install git-lfs
     
     - name: Checkout LFS objects
+      working-directory: ${{github.workspace}}
       run: git lfs pull
     
     - name: Compile
