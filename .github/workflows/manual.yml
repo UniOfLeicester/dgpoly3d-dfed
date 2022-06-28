@@ -29,7 +29,10 @@ jobs:
         pwd
         ls -la
         git lfs install
-        #git lfs checkout
+        git lfs env
+        git lfs fetch
+        git lfs checkout
+        git lfs pull
     
     #- name: Checkout LFS objects
     #  working-directory: ${{ github.workspace }}
