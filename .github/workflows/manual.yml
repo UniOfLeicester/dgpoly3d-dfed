@@ -12,10 +12,10 @@ jobs:
       image: intel/oneapi-basekit:latest
 
     steps:   
-    - name: Install git-lfs
-      run: |
-        curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
-        apt-get install git-lfs
+    #- name: Install git-lfs
+    #  run: |
+    #    curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+    #    apt-get install git-lfs
     
     - name: Checkout github repo (+ download lfs dependencies)
       uses: actions/checkout@v3
