@@ -23,20 +23,20 @@ jobs:
         repository: ${{ github.repository }}
         ref: main
         lfs: true
-    - run: |
+    
+    - name: Checkout LFS objects
+      working-directory: ${{ github.workspace }}
+      run: |
         which git
         which git-lfs
         pwd
         ls -la
         git lfs install
         git lfs env
+        git lfs ls-files
         git lfs fetch
         git lfs checkout
         git lfs pull
-    
-    #- name: Checkout LFS objects
-    #  working-directory: ${{ github.workspace }}
-    #  run: git lfs checkout
         
     - name: Compile
       working-directory: ${{ github.workspace }}/sycl
