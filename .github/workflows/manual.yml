@@ -46,8 +46,8 @@ jobs:
     
     - name: Run on 48 elements
       working-directory: ${{ github.workspace }}/sycl
-      run: ./main ${{ github.workspace }}/inout/e48_t192 | grep "All values are correct"
+      run: ./main ../inout/e48_t192 | grep "All values are correct"
   
     - name: Run on 384 elements
       working-directory: ${{ github.workspace }}/sycl
-      run: ./main ${{ github.workspace }}/inout/e384_t1536 | grep "All values are correct"
+      run: ./main ../inout/e384_t1536 | grep "All values are correct"
